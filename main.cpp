@@ -1,10 +1,12 @@
 #include <iostream>
+#include <cassert>
 #include <string>
 #include <vector>
 
-int main(int argc, char* argv[]) 
+/// Implementation of int_to_word main function
+int do_main(const std::vector<std::string>& args)
 {
-  if (argc != 2)
+  if (args.size() != 2)
   {
     return 1;
   }
@@ -26,4 +28,21 @@ int main(int argc, char* argv[])
   {
     return 1;
   }
+}
+
+/// bool_to_coin main function, that also tests its implementation
+int main(int argc, char* argv[])
+{
+    assert(do_main( { "int_to_word" } ) == 1);
+    assert(do_main( { "int_to_word", "1" } ) == 0);
+    assert(do_main( { "int_to_word", "2" } ) == 0);
+    assert(do_main( { "int_to_word", "3" } ) == 0);
+    assert(do_main( { "int_to_word", "4" } ) == 0);
+    assert(do_main( { "int_to_word", "5" } ) == 0);
+    assert(do_main( { "int_to_word", "6" } ) == 0);
+    assert(do_main( { "int_to_word", "nonsense" } ) == 1);
+    assert(do_main( { "int_to_word", "1 2" } ) == 1);
+
+    const std::vector<std::string> args (argv, argv + argc);
+    return do_main(args);
 }
