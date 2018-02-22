@@ -12,7 +12,7 @@ int do_main(const std::vector<std::string>& args)
   }
   try
   {
-    const int value{std::stoi(argv[1])};
+    const int value{std::stoi(args[1])};
     switch (value)
     {
       case 1: std::cout << "one\n"; break;
