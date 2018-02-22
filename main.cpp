@@ -28,6 +28,7 @@ int do_main(const std::vector<std::string>& args)
   {
     return 1;
   }
+  return 0;
 }
 
 /// bool_to_coin main function, that also tests its implementation
