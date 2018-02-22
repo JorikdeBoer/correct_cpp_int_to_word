@@ -42,7 +42,7 @@ int main(int argc, char* argv[])
     assert(do_main( { "int_to_word", "5" } ) == 0);
     assert(do_main( { "int_to_word", "6" } ) == 0);
     assert(do_main( { "int_to_word", "nonsense" } ) == 1);
-    assert(do_main( { "int_to_word", "1 2" } ) == 1);
+    assert(do_main( { "int_to_word", "1" "2" } ) == 1);
 
     const std::vector<std::string> args (argv, argv + argc);
     return do_main(args);
